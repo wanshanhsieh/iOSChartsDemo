@@ -4,6 +4,8 @@
 
 Library: https://github.com/danielgindi/Charts
 
+---------------------------------------------------------
+
 20180610:
 
 新增BarChart, PieChart
