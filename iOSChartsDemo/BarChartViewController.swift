@@ -19,8 +19,8 @@ class BarChartViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
-        months = ["Jan", "Feb", "Mar", "Apr", "May"]
-        let unitsSold = [50.0, 10.0, 20.0, 30.0, 25.0]
+        months = ["Jan", "Feb", "Mar", "Apr", "May", "Jun"]
+        let unitsSold = [50.0, 10.0, 20.0, 30.0, 25.0, 15.0]
         setChart(dataPoints: months, values: unitsSold)
     }
 
@@ -51,6 +51,7 @@ class BarChartViewController: UIViewController {
         xaxis.setLabelCount(dataPoints.count, force: true) // not working
         xaxis.granularityEnabled = false // not working
         xaxis.valueFormatter = formato
+        barChartView.xAxis.labelPosition = .bottom
         barChartView.xAxis.valueFormatter = xaxis.valueFormatter
 
         /* animation */

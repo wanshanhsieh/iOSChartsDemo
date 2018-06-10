@@ -27,10 +27,10 @@ class ChartsViewController: UIViewController {
     func setChart(dataPoints: [String], values: [Double]) {
         var dataEntries: [ChartDataEntry] = []
         var colors: [UIColor] = []
-        var LegendEntries: [LegendEntry] = []
-        
+        var legendEntries: [LegendEntry] = []
+
         for i in 0..<dataPoints.count {
-            let dataEntry = ChartDataEntry(x: Double(i), y: values[i])
+            let dataEntry = PieChartDataEntry(value: values[i], label: dataPoints[i])
             dataEntries.append(dataEntry)
             
             let red = Double(arc4random_uniform(256))
@@ -39,16 +39,48 @@ class ChartsViewController: UIViewController {
             let color = UIColor(red: CGFloat(red/255), green: CGFloat(green/255), blue: CGFloat(blue/255), alpha: 1)
             colors.append(color)
             
-            let legendEntry = LegendEntry.init(label: dataPoints[i], form: .default, formSize: 14.0, formLineWidth: CGFloat.nan, formLineDashPhase: CGFloat.nan, formLineDashLengths: nil, formColor: colors[i])
-            LegendEntries.append(legendEntry)
+            let legendEntry = LegendEntry.init(label: dataPoints[i], form: .default, formSize: 20.0, formLineWidth: CGFloat.nan, formLineDashPhase: CGFloat.nan, formLineDashLengths: nil, formColor: colors[i])
+            legendEntries.append(legendEntry)
         }
         
         let pieChartDataSet = PieChartDataSet(values: dataEntries, label: "Units Sold")
         let pieChartData = PieChartData(dataSet: pieChartDataSet)
         
+        // setPieChartDataConfig(pieChartData: pieChartData) // show percentage of data
+        
+        /* pie chart data */
         pieChartDataSet.colors = colors
         pieChartView.chartDescription?.text = ""
-        pieChartView.legend.setCustom(entries: LegendEntries)
         pieChartView.data = pieChartData
+        
+        /* pie chart legend */
+        setPieChartLegend(Legend: legendEntries)
+        
+    }
+    
+    /* show % of data */
+    func setPieChartDataConfig(pieChartData: PieChartData){
+        pieChartData.setValueFormatter(DigitValueFormatter())
+        pieChartData.setValueTextColor(UIColor.gray)
+        pieChartData.setValueFont(UIFont.systemFont(ofSize: 10))
+    }
+    
+    /* show pie chart legend */
+    func setPieChartLegend(Legend: [LegendEntry]) {
+        pieChartView.legend.horizontalAlignment = .center
+        pieChartView.legend.verticalAlignment = .bottom
+        pieChartView.legend.font = UIFont.systemFont(ofSize: 14)
+        pieChartView.legend.setCustom(entries: Legend)
+    }
+    
+}
+
+@objc (DigitValueFormatter)
+public class DigitValueFormatter: NSObject, IValueFormatter {
+
+    public func stringForValue(_ value: Double, entry: ChartDataEntry, dataSetIndex: Int, viewPortHandler: ViewPortHandler?) -> String {
+        let valueWithoutDecimalPart = String(format: "%.2f%%", value)
+        return valueWithoutDecimalPart
     }
 }
+

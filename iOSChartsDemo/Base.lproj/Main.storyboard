@@ -42,7 +42,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1787" y="771"/>
+            <point key="canvasLocation" x="1918" y="686"/>
         </scene>
         <!--Charts View Controller-->
         <scene sceneID="5lS-Hu-cvw">
@@ -76,7 +76,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hAF-Aj-ayK" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1787" y="1534"/>
+            <point key="canvasLocation" x="1918" y="1344"/>
         </scene>
         <!--Table View Controller-->
         <scene sceneID="QUu-iL-6Do">
@@ -129,6 +129,26 @@
                                             <segue destination="hoD-GK-Z3Q" kind="show" id="lq2-Ew-D5l"/>
                                         </connections>
                                     </tableViewCell>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" textLabel="8FC-uU-fLB" style="IBUITableViewCellStyleDefault" id="Qbq-Hn-KLo">
+                                        <rect key="frame" x="0.0" y="88" width="375" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Qbq-Hn-KLo" id="yPn-MW-oWh">
+                                            <rect key="frame" x="0.0" y="0.0" width="341" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Line Chart" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="8FC-uU-fLB">
+                                                    <rect key="frame" x="16" y="0.0" width="324" height="43.5"/>
+                                                    <autoresizingMask key="autoresizingMask"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <segue destination="C9R-Yc-8UV" kind="show" id="qoo-ea-s27"/>
+                                        </connections>
+                                    </tableViewCell>
                                 </cells>
                             </tableViewSection>
                         </sections>
@@ -160,6 +180,40 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2wU-t8-o4s" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="196" y="1155"/>
+        </scene>
+        <!--Line Chart View Controller-->
+        <scene sceneID="QSh-Tg-XNx">
+            <objects>
+                <viewController id="C9R-Yc-8UV" customClass="LineChartViewController" customModule="iOSChartsDemo" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="5jU-S9-0SL"/>
+                        <viewControllerLayoutGuide type="bottom" id="XXG-QO-Ojd"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="C4U-0k-gWu">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="603"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="jKW-h9-sPZ" userLabel="Line Chart View" customClass="LineChartView" customModule="Charts">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="603"/>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="jKW-h9-sPZ" firstAttribute="top" secondItem="5jU-S9-0SL" secondAttribute="bottom" id="71o-k4-3rg"/>
+                            <constraint firstItem="XXG-QO-Ojd" firstAttribute="top" secondItem="jKW-h9-sPZ" secondAttribute="bottom" id="EP9-2N-R2q"/>
+                            <constraint firstAttribute="trailing" secondItem="jKW-h9-sPZ" secondAttribute="trailing" id="xGT-w3-An2"/>
+                            <constraint firstItem="jKW-h9-sPZ" firstAttribute="leading" secondItem="C4U-0k-gWu" secondAttribute="leading" id="ypn-dC-lnm"/>
+                        </constraints>
+                    </view>
+                    <extendedEdge key="edgesForExtendedLayout" bottom="YES"/>
+                    <connections>
+                        <outlet property="lineChartView" destination="jKW-h9-sPZ" id="KzQ-tf-l7h"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="TXg-Ef-nJ0" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1918" y="2007"/>
         </scene>
     </scenes>
 </document>

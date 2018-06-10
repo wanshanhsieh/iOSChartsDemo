@@ -16,6 +16,7 @@
 		5F69C00A1B2A6CA200FB2CE0 /* ChartsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F69C0091B2A6CA200FB2CE0 /* ChartsViewController.swift */; };
 		B6A1B37220CC158B0059006D /* Charts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B6A1B36D20CC15440059006D /* Charts.framework */; };
 		B6A1B37320CC158B0059006D /* Charts.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = B6A1B36D20CC15440059006D /* Charts.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		B6CE23BD20CCE29B00ED1195 /* LineChartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6CE23BC20CCE29B00ED1195 /* LineChartViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -76,6 +77,7 @@
 		5F69BFFF1B2A6B8300FB2CE0 /* iOSChartsDemoTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iOSChartsDemoTests.swift; sourceTree = "<group>"; };
 		5F69C0091B2A6CA200FB2CE0 /* ChartsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChartsViewController.swift; sourceTree = "<group>"; };
 		B6A1B36720CC15440059006D /* Charts.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Charts.xcodeproj; path = ../Charts/Charts.xcodeproj; sourceTree = "<group>"; };
+		B6CE23BC20CCE29B00ED1195 /* LineChartViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LineChartViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -127,6 +129,7 @@
 				5F69BFF01B2A6B8200FB2CE0 /* Images.xcassets */,
 				5F69BFF21B2A6B8200FB2CE0 /* LaunchScreen.xib */,
 				5F69BFE71B2A6B8200FB2CE0 /* Supporting Files */,
+				B6CE23BC20CCE29B00ED1195 /* LineChartViewController.swift */,
 			);
 			path = iOSChartsDemo;
 			sourceTree = "<group>";
@@ -299,6 +302,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				5F69C00A1B2A6CA200FB2CE0 /* ChartsViewController.swift in Sources */,
+				B6CE23BD20CCE29B00ED1195 /* LineChartViewController.swift in Sources */,
 				5F69BFEC1B2A6B8200FB2CE0 /* BarChartViewController.swift in Sources */,
 				5F69BFEA1B2A6B8200FB2CE0 /* AppDelegate.swift in Sources */,
 			);
